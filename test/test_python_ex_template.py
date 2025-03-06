@@ -22,7 +22,7 @@ BRANCH_TO_TEST = "2.2.x"
 class TestPythonExTemplate:
 
     def setup_method(self):
-        self.oc_api = OpenShiftAPI(pod_name_prefix="python-testing", version=VERSION)
+        self.oc_api = OpenShiftAPI(pod_name_prefix="python-testing", version=VERSION, shared_cluster=True)
 
     def teardown_method(self):
         self.oc_api.delete_project()
